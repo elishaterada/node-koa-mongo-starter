@@ -1,0 +1,4 @@
+{
+  "parser": "eslint",
+  "extends": ["plugin:prettier/recommended"]
+}

@@ -2,9 +2,13 @@
   "name": "@elishaterada/node-starter",
   "version": "0.1.0",
   "description": "A boilerplate for Node projects",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "babel src --out-dir dist",
+    "dev": "node_modules/.bin/nodemon --exec npm run restart",
+    "restart": "node_modules/.bin/rimraf dist && npm run build && npm start",
+    "start": "npx node dist/index.js",
+    "lint": "node_modules/.bin/eslint --quiet **/**/*.js"
   },
   "repository": {
     "type": "git",
@@ -18,5 +22,29 @@
   "bugs": {
     "url": "https://github.com/elishaterada/node-starter/issues"
   },
-  "homepage": "https://github.com/elishaterada/node-starter#readme"
+  "homepage": "https://github.com/elishaterada/node-starter#readme",
+  "dependencies": {
+    "lodash": "^4.17.11"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.0.0",
+    "@babel/plugin-proposal-class-properties": "^7.0.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-eslint": "^8.2.1",
+    "eslint": "^4.19.1",
+    "eslint-config-prettier": "^4.0.0",
+    "eslint-loader": "^1.7.1",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-node": "^7.0.1",
+    "eslint-plugin-prettier": "^3.0.1",
+    "eslint-plugin-promise": "^3.8.0",
+    "koa": "^2.7.0",
+    "koa-router": "^7.4.0",
+    "nodemon": "^1.18.3",
+    "prettier": "^1.16.4",
+    "rimraf": "^2.6.3"
+  }
 }
