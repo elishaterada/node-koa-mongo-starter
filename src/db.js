@@ -1,8 +1,10 @@
 import mongoose from "mongoose";
 import MongoMemoryServer from "mongodb-memory-server";
 
-const mongod = new MongoMemoryServer({ debug: true });
-const opts = {};
+const mongod = new MongoMemoryServer();
+const opts = {
+  useNewUrlParser: true
+};
 
 const connect = async () => {
   try {

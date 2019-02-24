@@ -1,6 +1,10 @@
 import Koa from "koa";
+import bodyParser from "koa-bodyparser";
+import cors from "@koa/cors";
+import json from "koa-json";
 
 import { connect } from "./db";
+import routes from "./routes";
 const app = new Koa();
 
 const port = 3001;
@@ -11,15 +15,17 @@ app.use(async (ctx, next) => {
   console.log(`${ctx.method} ${ctx.url} - ${rt}`);
 });
 
+app.use(cors());
+app.use(bodyParser());
+app.use(json());
+app.use(routes.routes());
+app.use(routes.allowedMethods());
+
 app.use(async (ctx, next) => {
   const start = Date.now();
   await next();
   const ms = Date.now() - start;
   ctx.set("X-Response-Time", `${ms}ms`);
-});
-
-app.use(async ctx => {
-  ctx.body = "Hello World";
 });
 
 export const start = async () => {

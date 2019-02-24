@@ -24,6 +24,9 @@
   },
   "homepage": "https://github.com/elishaterada/node-starter#readme",
   "dependencies": {
+    "@koa/cors": "^2.2.3",
+    "koa-bodyparser": "^4.2.1",
+    "koa-json": "^2.0.2",
     "lodash": "^4.17.11",
     "mongoose": "^5.4.15"
   },
