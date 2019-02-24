@@ -1,4 +1,6 @@
 import Koa from "koa";
+
+import { connect } from "./db";
 const app = new Koa();
 
 const port = 3001;
@@ -22,6 +24,7 @@ app.use(async ctx => {
 
 export const start = async () => {
   try {
+    await connect();
     app.listen(port, () => {
       console.log(`REST API on http://localhost:${port}`);
     });
