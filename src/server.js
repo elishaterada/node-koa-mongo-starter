@@ -4,7 +4,6 @@ import cors from "@koa/cors";
 import json from "koa-json";
 import passport from "koa-passport";
 
-import { connect } from "./db";
 import routes from "./routes";
 
 const app = new Koa();
@@ -35,6 +34,13 @@ app.use(async (ctx, next) => {
 });
 
 export const start = async () => {
+  let connect;
+  if (process.env.NODE_ENV === "production") {
+    connect = require("./db");
+  } else if (process.env.NODE_ENV === "development") {
+    connect = require("./db.development");
+  }
+
   try {
     await connect();
     app.listen(port, () => {

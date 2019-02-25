@@ -1,12 +1,15 @@
 import mongoose from "mongoose";
+import MongoMemoryServer from "mongodb-memory-server";
 
+const mongod = new MongoMemoryServer();
 const opts = {
   useNewUrlParser: true
 };
 
 const connect = async () => {
   try {
-    return mongoose.connect(process.env.MONGODB_URI, opts);
+    const uri = await mongod.getConnectionString();
+    return mongoose.connect(uri, opts);
   } catch (e) {
     console.error(e);
   }
