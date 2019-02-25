@@ -25,10 +25,14 @@
   "homepage": "https://github.com/elishaterada/node-starter#readme",
   "dependencies": {
     "@koa/cors": "^2.2.3",
+    "bcrypt": "^3.0.4",
+    "jsonwebtoken": "^8.5.0",
     "koa-bodyparser": "^4.2.1",
     "koa-json": "^2.0.2",
+    "koa-passport": "^4.1.1",
     "lodash": "^4.17.11",
-    "mongoose": "^5.4.15"
+    "mongoose": "^5.4.15",
+    "passport-jwt": "^4.0.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.0.0",

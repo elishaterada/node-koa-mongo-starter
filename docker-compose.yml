@@ -9,3 +9,4 @@ services:
       - '3001:3001'
     environment:
       - NODE_ENV=development
+      - JWT_SECRET=secret

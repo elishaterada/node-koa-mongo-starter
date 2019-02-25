@@ -2,9 +2,11 @@ import Koa from "koa";
 import bodyParser from "koa-bodyparser";
 import cors from "@koa/cors";
 import json from "koa-json";
+import passport from "koa-passport";
 
 import { connect } from "./db";
 import routes from "./routes";
+
 const app = new Koa();
 
 const port = 3001;
@@ -18,6 +20,10 @@ app.use(async (ctx, next) => {
 app.use(cors());
 app.use(bodyParser());
 app.use(json());
+
+require("./passport");
+app.use(passport.initialize());
+
 app.use(routes.routes());
 app.use(routes.allowedMethods());
 
