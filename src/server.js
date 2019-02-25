@@ -8,7 +8,7 @@ import routes from "./routes";
 
 const app = new Koa();
 
-const port = 3001;
+const port = process.env.PORT || 3001;
 
 app.use(async (ctx, next) => {
   await next();

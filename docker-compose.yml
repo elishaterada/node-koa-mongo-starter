@@ -10,3 +10,4 @@ services:
     environment:
       - NODE_ENV=development
       - JWT_SECRET=secret
+      - PORT=3001
