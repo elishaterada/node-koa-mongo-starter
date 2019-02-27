@@ -15,7 +15,7 @@ const getMe = async ctx => {
       id: user._id,
       email: user.email
     };
-    ctx.status = 201;
+    ctx.status = 200;
   } catch (e) {
     console.error(e);
     ctx.status = 404;
