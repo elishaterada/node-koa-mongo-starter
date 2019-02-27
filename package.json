@@ -1,7 +1,7 @@
 {
-  "name": "@elishaterada/node-starter",
+  "name": "node-starter",
   "version": "0.1.0",
-  "description": "A boilerplate for Node projects",
+  "description": "A prototype server for X",
   "main": "src/index.js",
   "scripts": {
     "build": "node_modules/.bin/babel src --out-dir dist",
@@ -11,19 +11,10 @@
     "deploy": "npm run build; npm start",
     "lint": "node_modules/.bin/eslint --quiet **/**/*.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/elishaterada/node-starter.git"
-  },
   "keywords": [
     "Node"
   ],
   "author": "Elisha Terada",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/elishaterada/node-starter/issues"
-  },
-  "homepage": "https://github.com/elishaterada/node-starter#readme",
   "dependencies": {
     "@babel/cli": "^7.0.0",
     "@babel/core": "^7.0.0",
