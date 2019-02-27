@@ -3,18 +3,12 @@
   "extends": [
     "eslint:recommended",
     "prettier",
-    "prettier/react",
-    "plugin:react/recommended",
-    "plugin:jsx-a11y/recommended",
     "plugin:import/recommended"
   ],
   "plugins": [
-    "jsx-a11y",
-    "import",
-    "react"
+    "import"
   ],
   "env": {
-    "browser": true,
     "node": true,
     "es6": true
   },
@@ -25,14 +19,6 @@
         "allow": [
           "warn",
           "error"
-        ]
-      }
-    ],
-    "react/prop-types": [
-      "error",
-      {
-        "ignore": [
-          "commonStore"
         ]
       }
     ]
