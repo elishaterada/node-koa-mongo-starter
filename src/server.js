@@ -1,5 +1,5 @@
 import Koa from "koa";
-import bodyParser from "koa-bodyparser";
+import koaBody from "koa-body";
 import cors from "@koa/cors";
 import json from "koa-json";
 import passport from "koa-passport";
@@ -17,12 +17,12 @@ app.use(async (ctx, next) => {
 });
 
 app.use(cors());
-app.use(bodyParser());
 app.use(json());
 
 require("./passport");
 app.use(passport.initialize());
 
+app.use(koaBody());
 app.use(routes.routes());
 app.use(routes.allowedMethods());
 
