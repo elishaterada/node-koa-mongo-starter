@@ -1,4 +1,5 @@
 dist
+docker-compose.yml
 
 # Logs
 logs
